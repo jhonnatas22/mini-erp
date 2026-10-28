@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXO — Mini-ERP de Estoque e Vendas para Pequenos Comércios</title>
+  <meta name="description" content="O Mini-ERP completo para pequenos comércios: produtos, estoque, vendas, clientes, fornecedores, relatórios e auditoria em um único sistema. Controle total, histórico de cada movimentação e zero planilha.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d4ed8'/%3E%3Cpath d='M10 22V10l12 12V10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18V6l12 12V6"/></svg>
+        </span>
+        <span>Nexo<em>ERP</em></span>
+      </a>
+
+      <nav class="nav">
+        <a href="#modulos">Módulos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#depoimentos">Clientes</a>
+        <a href="#oferta">Investimento</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="demo.html" class="btn btn-outline">Ver demonstração</a>
+        <a href="#oferta" class="btn btn-primary">Começar agora</a>
+        <button class="nav-toggle" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pill">Novo</span>
+          Sistema completo de gestão para pequenos comércios
+        </div>
+
+        <h1>Controle total do <span class="hl">estoque</span> e das <span class="hl">vendas</span> do seu comércio — em um único sistema.</h1>
+
+        <p class="hero-sub">
+          O Nexo substitui cadernos, planilhas e controlos manuais. Cadastre produtos, movimente o estoque, venda, acompanhe o faturamento e saiba <strong>exatamente quem fez o quê</strong> — com histórico completo de cada operação.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#oferta" class="btn btn-primary">
+            Quero organizar meu comércio
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="demo.html" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+            Ver o sistema em ação
+          </a>
+        </div>
+
+        <div class="hero-proof">
+          <div class="avatar-stack">
+            <span class="av-1">MG</span><span class="av-2">RS</span><span class="av-3">AP</span><span class="av-4">JC</span>
+          </div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <span>Usado por mercearias, lojas de roupa, eletrônicos e material de construção</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mockup do painel -->
+      <div class="hero-visual">
+        <div class="float-card fc-1">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg>
+          </span>
+          <div>Venda #000123 confirmada<small>Estoque atualizado automaticamente</small></div>
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <i></i><i></i><i></i>
+            <span>app.nexoerp.com.br/dashboard</span>
+          </div>
+          <div class="mockup-body">
+            <div class="kpi-row">
+              <div class="kpi"><small>Produtos</small><strong data-count="1245">0</strong></div>
+              <div class="kpi"><small>Estoque</small><strong data-count="8430">0</strong></div>
+              <div class="kpi"><small>Vendas hoje</small><strong data-count="2450" data-prefix="R$ " data-decimals="2">0</strong></div>
+            </div>
+
+            <div class="mock-chart">
+              <h5>Vendas dos últimos 7 dias</h5>
+              <div class="bars">
+                <i style="height:45%"></i><i style="height:70%"></i><i style="height:52%"></i>
+                <i style="height:88%"></i><i style="height:64%"></i><i style="height:96%"></i><i style="height:78%"></i>
+              </div>
+            </div>
+
+            <div class="mock-table">
+              <header>Produtos com estoque baixo <em>3 alertas</em></header>
+              <div class="mock-row"><span>Arroz Tipo 1 — 5kg</span><span class="q low">3 un.</span></div>
+              <div class="mock-row"><span>Feijão Carioca — 1kg</span><span class="q low">2 un.</span></div>
+              <div class="mock-row"><span>Café Torrado — 500g</span><span class="q warn">4 un.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-card fc-2">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
+          </span>
+          <div>Estoque mínimo atingido<small>Recomendado: repor 10 un. de café</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEGMENTOS ================= -->
+  <div class="segments">
+    <div class="container">
+      <p>Feito para o dia a dia de</p>
+      <ul>
+        <li>Mercearias</li>
+        <li>Lojas de roupa</li>
+        <li>Eletrônicos</li>
+        <li>Material de construção</li>
+        <li>Pequenos supermercados</li>
+        <li>Distribuidoras</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================= PROBLEMA / SOLUÇÃO ================= -->
+  <section class="section" id="solucao">
+    <div class="container split">
+      <div class="reveal">
+        <span class="section-tag">O problema</span>
+        <h2 class="section-title">Se o controle está no papel, o prejuízo está na conta.</h2>
+        <p class="section-sub">Quando o estoque é controlado na memória, em caderno ou em planilhas soltas, o comércio perde dinheiro de formas silenciosas — e só percebe no fim do mês.</p>
+
+        <div class="pain-list">
+          <div class="pain-item">
+            <span class="x">✕</span>
+            <div>
+              <h4>Venda de produto sem estoque</h4>
+              <p>Prometeu ao cliente e não tinha. Perdeu a venda — e, pior, a confiança.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <span class="x">✕</span>
+            <div>
+              <h4>Falta ou sobra de mercadoria sem explicação</h4>
+              <p>Sem histórico de movimentações, é impossível saber onde o estoque "vazou".</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <span class="x">✕</span>
+            <div>
+              <h4>Preços e quantidades alterados sem registro</h4>
+              <p>Quem mudou? Quando? Por quê? Sem auditoria, ninguém responde.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <span class="x">✕</span>
+            <div>
+              <h4>Decisões no escuro</h4>
+              <p>Sem relatórios de vendas e giro de produtos, o pedido ao fornecedor vira palpite.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="check-panel reveal">
+        <h3>Com o Nexo, cada operação vira registro.</h3>
+        <p>Nada é alterado sem histórico. Nada se perde sem explicação.</p>
+
+        <div class="check-item">
+          <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg></span>
+          <div><strong>Estoque atualizado em tempo real</strong> a cada venda, compra ou ajuste.</div>
+        </div>
+        <div class="check-item">
+          <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg></span>
+          <div><strong>Histórico completo de movimentações</strong> com motivo, data e usuário responsável.</div>
+        </div>
+        <div class="check-item">
+          <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg></span>
+          <div><strong>Alertas automáticos</strong> de estoque baixo e produtos esgotados.</div>
+        </div>
+        <div class="check-item">
+          <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg></span>
+          <div><strong>Auditoria de tudo</strong>: login, alteração de preço, venda e cancelamento.</div>
+        </div>
+        <div class="check-item">
+          <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg></span>
+          <div><strong>Relatórios prontos</strong> de vendas, ticket médio e produtos mais vendidos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MÓDULOS ================= -->
+  <section class="section modules" id="modulos">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">Módulos</span>
+        <h2 class="section-title">Um sistema. Todas as operações do seu comércio.</h2>
+        <p class="section-sub">Cada módulo foi desenhado para uma rotina real de loja — do cadastro do produto até o relatório que orienta o próximo pedido ao fornecedor.</p>
+      </div>
+
+      <div class="modules-grid">
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3.3 8.3L12 13l8.7-4.7M12 13v9"/></svg></span>
+          <h3>Cadastro de produtos</h3>
+          <p>Nome, SKU, código de barras, categoria, marca, fornecedor, preços, estoque mínimo e máximo, unidade de medida e situação.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>
+          <h3>Controle de estoque inteligente</h3>
+          <p>Toda entrada e saída gera movimentação registrada com motivo e responsável. O histórico nunca é apagado — é possível auditar tudo.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.5"/><circle cx="18" cy="21" r="1.5"/><path d="M2 3h3l2.6 12.5a2 2 0 002 1.5h8.7a2 2 0 002-1.6L22 7H6"/></svg></span>
+          <h3>Vendas integradas ao estoque</h3>
+          <p>Venda com múltiplos produtos, desconto e formas de pagamento. Ao confirmar, o sistema baixa o estoque e registra o pagamento sozinho.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></span>
+          <h3>Clientes</h3>
+          <p>Cadastro completo com CPF, contatos e endereço. Consulte histórico de compras, total gasto e data da última compra de cada cliente.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></span>
+          <h3>Fornecedores e compras</h3>
+          <p>Registre compras com quantidade e preço de custo. Ao confirmar, o sistema dá entrada automática no estoque e na movimentação.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+          <h3>Pagamentos flexíveis</h3>
+          <p>Dinheiro, Pix, débito, crédito e transferência. Na versão avançada, uma mesma venda pode ser dividida entre várias formas.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <h3>Permissões por perfil</h3>
+          <p>Super Admin, Administrador, Funcionário e Consulta. Cada um acessa apenas o que pode fazer — nada de funcionário excluindo produto.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6" rx="1"/><rect x="12" y="7" width="3" height="11" rx="1"/><rect x="17" y="9" width="3" height="9" rx="1"/></svg></span>
+          <h3>Relatórios e dashboard</h3>
+          <p>Vendas por período, faturamento, ticket médio, produtos mais vendidos e estoque baixo — com filtros por funcionário, cliente e pagamento.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l2.5 2.5"/><circle cx="12" cy="12" r="9"/></svg></span>
+          <h3>Auditoria completa</h3>
+          <p>Quem alterou o preço, quem cancelou a venda, quem entrou no sistema — tudo registrado com antes e depois, data e hora.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg></span>
+          <h3>Alertas automáticos</h3>
+          <p>Estoque abaixo do mínimo, produto esgotado e, na versão com lotes, validade próxima do vencimento. Você age antes de faltar.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 109-9"/><path d="M3 4v5h5"/></svg></span>
+          <h3>Cancelamento com devolução</h3>
+          <p>Venda cancelada não é apagada: fica registrada como cancelada e o estoque é devolvido automaticamente, com movimentação própria.</p>
+        </div>
+
+        <div class="module-card reveal">
+          <span class="module-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+          <h3>Categorias e marcas</h3>
+          <p>Estruture o catálogo em categorias e marcas com relacionamento real: um produto pertence a uma categoria, um fornecedor tem vários produtos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMO FUNCIONA ================= -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">Implementação</span>
+        <h2 class="section-title">Do caos ao controle em 3 passos.</h2>
+        <p class="section-sub">Sem consultoria cara, sem semanas de implantação. Você sobe o sistema e sua equipe começa a operar no mesmo dia.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <h3>Cadastre sua operação</h3>
+          <p>Crie os usuários com seus perfis de acesso, importe produtos e categorias e configure estoques mínimos. Em minutos, o painel já reflete a sua loja.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Opere no dia a dia</h3>
+          <p>Seu funcionário vende pelo caixa, o estoque baixa sozinho e a movimentação fica registrada. Compras dão entrada automática. Sem planilha paralela.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Decida com dados</h3>
+          <p>Acompanhe vendas do dia, ticket médio, produtos mais vendidos e alertas de reposição — e faça o próximo pedido ao fornecedor com base no giro real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BENEFÍCIOS ================= -->
+  <section class="section benefits" id="beneficios">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag" style="background:rgba(37,99,235,.15);border-color:rgba(96,165,250,.3);color:#93c5fd;">Benefícios</span>
+        <h2 class="section-title">O que muda na prática quando você tem o Nexo.</h2>
+        <p class="section-sub">Não é só organização. É dinheiro deixado de perder, tempo recuperado e decisões com lastro.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit reveal">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <div>
+            <h3>Horas devolvidas por semana</h3>
+            <p>Fim da conferência manual de caderno e planilha. A rotina de estoque passa a levar minutos, não tardes.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+          <div>
+            <h3>Menos perdas e quebras</h3>
+            <p>Cada saída tem motivo e responsável. O "sumiu do estoque" vira exceção rastreável — não rotina inexplicável.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></span>
+          <div>
+            <h3>Compras no momento certo</h3>
+            <p>Alertas de estoque mínimo e relatório de giro mostram o que repor — e o que não amontoar no depósito.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div>
+            <h3>Controle sobre a equipe sem microgerenciar</h3>
+            <p>Permissões por perfil e auditoria automática: você delega a operação e acompanha tudo, sem ficar em cima de ninguém.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          <div>
+            <h3>Atendimento mais confiante</h3>
+            <p>Estoque em tempo real no caixa: sua equipe promete apenas o que tem — e sugere o substituto certo quando não tem.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span>
+          <div>
+            <h3>Preparado para crescer</h3>
+            <p>Modelagem relacional séria, transações e histórico imutável: a base que aguenta mais lojas, mais usuários e mais módulos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROVA SOCIAL ================= -->
+  <section class="section" id="depoimentos">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">Resultados</span>
+        <h2 class="section-title">Quem organizou o estoque, organizou o negócio.</h2>
+        <p class="section-sub">Números e relatos de comércios que trocaram o controle manual pelo Nexo.</p>
+        <p class="honest-note">Relatos e métricas ilustrativos de implementações — personalize esta seção com os resultados reais dos seus clientes.</p>
+      </div>
+
+      <div class="stats-band">
+        <div class="stat reveal"><strong data-count="98" data-suffix="%">0</strong><span>de precisão no estoque após 60 dias de uso</span></div>
+        <div class="stat reveal"><strong data-count="12" data-prefix="+">0</strong><span>horas economizadas por semana na conferência</span></div>
+        <div class="stat reveal"><strong data-count="35" data-prefix="-" data-suffix="%">0</strong><span>de redução em perdas e quebras de mercadoria</span></div>
+        <div class="stat reveal"><strong data-count="1" data-suffix=" dia">0</strong><span>para implantar e treinar a equipe no sistema</span></div>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <q>Antes eu fechava o mês com uma diferença de estoque que nunca conseguia explicar. Hoje eu abro o histórico e vejo exatamente onde cada unidade foi parar. Acabou o mistério.</q>
+          <div class="who">
+            <i style="background:#2563eb">MG</i>
+            <div><strong>Mariana Gomes</strong><small>mercearia · São Paulo/SP</small></div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <q>Meu funcionário vende pelo caixa e eu vejo a venda, o estoque baixando e o pagamento em tempo real, pelo celular. Quando um produto fica em falta, recebo o alerta antes do cliente perguntar.</q>
+          <div class="who">
+            <i style="background:#0d9488">RS</i>
+            <div><strong>Rafael Souza</strong><small>loja de eletrônicos · Belo Horizonte/MG</small></div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <q>O relatório de produtos mais vendidos mudou a forma como compro. Hoje peço ao fornecedor com base no giro real — reduzi mercadoria parada e nunca mais fiquei sem o que mais sai.</q>
+          <div class="who">
+            <i style="background:#7c3aed">AP</i>
+            <div><strong>Ana Paula Lima</strong><small>loja de roupas · Curitiba/PR</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUEBRA DE OBJEÇÕES ================= -->
+  <section class="section objections">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">Sem letras miúdas</span>
+        <h2 class="section-title">As dúvidas que você provavelmente tem agora — respondidas.</h2>
+      </div>
+
+      <div class="objections-grid">
+        <div class="objection reveal">
+          <h3>"Não sou técnico. Vou conseguir usar?"</h3>
+          <p>Sim. O Nexo foi desenhado para a rotina do balcão, não para analistas. Telas diretas, linguagem de loja e treinamento em vídeo. Sua equipe aprende na prática, no primeiro dia.</p>
+        </div>
+        <div class="objection reveal">
+          <h3>"E se eu já tiver tudo em planilha?"</h3>
+          <p>Você importa produtos, categorias e clientes em poucos minutos. Nada de começar do zero — o sistema organiza o que você já tem e a partir daí tudo passa a ser registrado corretamente.</p>
+        </div>
+        <div class="objection reveal">
+          <h3>"Meu comércio é pequeno. Será que preciso disso?"</h3>
+          <p>Quanto menor a operação, mais cada unidade perdida pesa. O Nexo existe justamente para o pequeno comércio que não pode pagar um ERP corporativo — e não pode mais pagar pelo controle manual.</p>
+        </div>
+        <div class="objection reveal">
+          <h3>"E se algo der errado em uma venda ou no estoque?"</h3>
+          <p>O sistema trabalha com transações: ou a operação completa inteira, ou desfaz tudo. E com o histórico imutável, você consegue reconstruir qualquer situação — preço antigo, venda cancelada, estoque restaurado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OFERTA ================= -->
+  <section class="section offer" id="oferta">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag" style="background:rgba(37,99,235,.15);border-color:rgba(96,165,250,.3);color:#93c5fd;">Investimento</span>
+        <h2 class="section-title">Um sistema completo pelo preço de uma semana de prejuízo.</h2>
+        <p class="section-sub">Pagamento único. Sem mensalidade escondida, sem taxa por usuário, sem surpresa.</p>
+      </div>
+
+      <div class="price-compare reveal">
+        <div class="pc-col">
+          <h4>Essencial</h4>
+          <p class="pc-price">R$ 297</p>
+          <ul>
+            <li>Vendas com baixa automática de estoque</li>
+            <li>Cadastro de produtos e clientes</li>
+            <li>Dashboard com alertas de estoque baixo</li>
+          </ul>
+        </div>
+        <div class="pc-col featured">
+          <h4>Completo</h4>
+          <p class="pc-price">R$ 497</p>
+          <ul>
+            <li>Tudo do Essencial</li>
+            <li>Permissões por perfil, auditoria e relatórios</li>
+            <li>Lotes e validade, pedidos online do cliente e cancelamento inteligente</li>
+          </ul>
+          <span class="pc-tag">Recomendado</span>
+        </div>
+      </div>
+
+      <div class="offer-card reveal">
+        <div class="offer-head">
+          <div>
+            <h3>Plano Nexo Completo</h3>
+            <p>Todos os módulos, todos os perfis, sem limite de usuários*</p>
+          </div>
+          <span class="tag">Oferta de lançamento</span>
+        </div>
+
+        <div class="offer-body">
+          <div class="price-row">
+            <span class="price-old">R$ 997,00</span>
+            <span class="price-now">R$ 497</span>
+          </div>
+          <p class="price-note">pagamento único · à vista ou em até 12x no cartão</p>
+
+          <ul class="offer-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg>Produtos, categorias, marcas e fornecedores</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg>Estoque com histórico completo de movimentações</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg>Vendas, pagamentos e cancelamento inteligente</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg>Dashboard, relatórios e alertas de estoque baixo</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg>Permissões por perfil e trilha de auditoria</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg>Atualizações por 12 meses incluídas</li>
+          </ul>
+
+          <div class="bonus-box">
+            <h4>Bônus de implantação</h4>
+            <p>Checklist de implantação em 1 dia + treinamento em vídeo da equipe + suporte prioritário nos primeiros 30 dias.</p>
+          </div>
+
+          <a href="#contato" class="btn btn-primary" style="width:100%;">
+            Quero o Nexo no meu comércio
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+
+          <div class="offer-guarantee">
+            <span class="seal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <p><strong>Garantia incondicional de 7 dias.</strong> Use o sistema com seus dados reais. Se não organizar seu estoque, devolvemos 100% do valor — sem perguntas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Perguntas frequentes</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">O Nexo funciona para o meu tipo de comércio?
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Sim. O sistema foi pensado para varejo de produtos físicos: mercearias, supermercados, lojas de roupa, eletrônicos, material de construção, distribuidoras e afins. Se você compra, estoca e vende produtos, o Nexo se aplica.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Preciso instalar algo no computador?
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Não. O Nexo roda no navegador, em qualquer computador, tablet ou celular. Você acessa com seu login e opera de qualquer lugar — inclusive acompanhando a loja à distância.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Quantos usuários posso cadastrar?
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-a"><p>O plano inclui usuários ilimitados com os quatro perfis de acesso (Super Admin, Administrador, Funcionário e Consulta). Você controla exatamente o que cada pessoa pode ver e fazer.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Como funciona o controle de permissões?
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Cada usuário recebe um perfil. O Funcionário vende e consulta, mas não exclui produtos nem altera configurações; o Administrador gerencia estoque, cadastros e relatórios; apenas o Super Admin controla usuários e configurações do sistema. Tudo com base em RBAC (controle de acesso por função).</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">O que acontece com meus dados? Fazem backup?
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Seus dados são armazenados com segurança e backup automático periódico. Você também pode exportar seus cadastros e relatórios a qualquer momento. O histórico de movimentações e auditoria é preservado e nunca sobrescrito.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">E se eu vender mais do que tenho em estoque?
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-a"><p>O sistema simplesmente não deixa. Existe uma regra de negócio que bloqueia a venda quando a quantidade solicitada é maior que o disponível. O mesmo vale para produtos inativos e preços inválidos.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Posso cancelar uma venda sem perder o histórico?
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Sim — e é assim que deve ser. A venda fica registrada com o status "cancelada", os itens retornam ao estoque automaticamente e a operação gera movimentação de entrada. Nada é apagado, tudo é auditável.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">O sistema emite nota fiscal?
+            <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-a"><p>A emissão fiscal não está incluída nesta versão. O Nexo cobre a operação completa de estoque e vendas; a integração com emissão de notas está no roadmap de evolução do produto.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA FINAL ================= -->
+  <section class="final-cta" id="contato">
+    <div class="container">
+      <h2>Seu estoque não pode esperar o fim do mês para ser explicado.</h2>
+      <p>Solicite uma demonstração guiada com seus próprios produtos e veja o Nexo organizando sua operação em tempo real. Sem compromisso.</p>
+      <form class="lead-form" id="leadForm">
+        <input type="text" id="leadNome" placeholder="Seu nome" required>
+        <input type="text" id="leadContato" placeholder="WhatsApp ou e-mail" required>
+        <select id="leadSegmento" required>
+          <option value="" disabled selected>Tipo de comércio</option>
+          <option>Mercearia / supermercado</option>
+          <option>Loja de roupas</option>
+          <option>Eletrônicos</option>
+          <option>Material de construção</option>
+          <option>Distribuidora</option>
+          <option>Outro</option>
+        </select>
+        <button type="submit" class="btn btn-white">
+          Agendar demonstração gratuita
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+      <p class="lead-success" id="leadSuccess" hidden>Recebido! Entraremos em contato em até 1 dia útil para agendar sua demonstração guiada.</p>
+      <div class="hero-actions" style="margin-top:18px;">
+        <a href="demo.html" class="btn btn-ghost-light">Explorar a demo sozinho</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="logo">
+            <span class="logo-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18V6l12 12V6"/></svg>
+            </span>
+            <span>Nexo<em>ERP</em></span>
+          </a>
+          <p class="footer-about">O Mini-ERP de estoque e vendas para pequenos e médios comércios que decidiram trocar o controle manual por dados, histórico e previsibilidade.</p>
+        </div>
+
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#modulos">Módulos</a></li>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#oferta">Investimento</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Módulos</h4>
+          <ul>
+            <li><a href="#modulos">Produtos e categorias</a></li>
+            <li><a href="#modulos">Controle de estoque</a></li>
+            <li><a href="#modulos">Vendas e pagamentos</a></li>
+            <li><a href="#modulos">Relatórios e dashboard</a></li>
+            <li><a href="#modulos">Auditoria e permissões</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@nexoerp.com.br">contato@nexoerp.com.br</a></li>
+            <li><a href="tel:+5500000000000">(00) 00000-0000</a></li>
+            <li><a href="demo.html">Demonstração ao vivo</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Nexo ERP. Todos os direitos reservados.</span>
+        <span>Feito para pequenos comércios que querem crescer com controle.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

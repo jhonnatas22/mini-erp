@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acesso ao Sistema — Nexo ERP | Mini-ERP de Estoque e Vendas</title>
+  <meta name="description" content="Acesse a demonstração do Nexo ERP com áreas exclusivas para administradores, funcionários e clientes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/demo.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d4ed8'/%3E%3Cpath d='M10 22V10l12 12V10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body class="demo-body">
+
+  <!-- ============ TELA DE LOGIN ============ -->
+  <div class="demo-login" id="loginScreen">
+    <div class="login-card">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18V6l12 12V6"/></svg>
+        </span>
+        <span>Nexo<em>ERP</em></span>
+      </a>
+      <h1>Acesse o sistema</h1>
+      <p>Cada perfil enxerga apenas a sua área de trabalho.</p>
+
+      <form class="login-form" id="loginForm">
+        <div class="demo-field">
+          <label for="loginEmail">E-mail</label>
+          <input type="email" id="loginEmail" placeholder="voce@email.com" required>
+        </div>
+        <div class="demo-field">
+          <label for="loginSenha">Senha</label>
+          <input type="password" id="loginSenha" placeholder="Sua senha" required>
+        </div>
+        <div class="login-error" id="loginError">E-mail ou senha inválidos.</div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+
+      <div class="login-demo">
+        <p>Contas de demonstração (senha: demo123)</p>
+        <div class="login-chips">
+          <button class="login-chip" data-email="admin@nexoerp.com" data-senha="demo123">
+            <div>João Silva<small>Administrador</small></div>
+          </button>
+          <button class="login-chip" data-email="caixa@nexoerp.com" data-senha="demo123">
+            <div>Carlos Almeida<small>Funcionário · Caixa</small></div>
+          </button>
+          <button class="login-chip" data-email="cliente@nexoerp.com" data-senha="demo123">
+            <div>Maria Oliveira<small>Cliente</small></div>
+          </button>
+          <button class="login-chip" data-email="super@nexoerp.com" data-senha="demo123">
+            <div>Super Admin<small>Super Administrador</small></div>
+          </button>
+        </div>
+      </div>
+
+      <p class="login-links">Área exclusiva para clientes? <a href="cadastro.html">Cadastre-se gratuitamente</a></p>
+    </div>
+  </div>
+
+  <!-- ============ APLICAÇÃO ============ -->
+  <div class="demo-shell" id="appShell" style="display:none;">
+
+    <!-- Sidebar -->
+    <aside class="demo-sidebar">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18V6l12 12V6"/></svg>
+        </span>
+        <span>Nexo<em>ERP</em></span>
+      </a>
+
+      <span class="demo-side-label">Operação</span>
+
+      <button class="demo-nav-btn" data-pane="dashboard" data-roles="admin superadmin funcionario" data-title="Dashboard" data-sub="Visão geral da loja em tempo real">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        Dashboard
+      </button>
+      <button class="demo-nav-btn" data-pane="vendas" data-roles="admin superadmin funcionario" data-title="Vendas" data-sub="Registre vendas — o estoque baixa sozinho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.5"/><circle cx="18" cy="21" r="1.5"/><path d="M2 3h3l2.6 12.5a2 2 0 002 1.5h8.7a2 2 0 002-1.6L22 7H6"/></svg>
+        Vendas
+      </button>
+      <button class="demo-nav-btn" data-pane="pedidos" data-roles="admin superadmin funcionario cliente" data-title="Pedidos" data-sub="Orçamentos do cliente convertidos em venda">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
+        Pedidos
+      </button>
+      <button class="demo-nav-btn" data-pane="produtos" data-roles="admin superadmin funcionario" data-title="Produtos" data-sub="Catálogo completo com preços, lotes e validade">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3.3 8.3L12 13l8.7-4.7M12 13v9"/></svg>
+        Produtos
+      </button>
+      <button class="demo-nav-btn" data-pane="estoque" data-roles="admin superadmin funcionario" data-title="Movimentações de estoque" data-sub="Histórico imutável de entradas e saídas">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+        Estoque
+      </button>
+      <button class="demo-nav-btn" data-pane="clientes" data-roles="admin superadmin funcionario" data-title="Clientes" data-sub="Cadastros e histórico de compras">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg>
+        Clientes
+      </button>
+      <button class="demo-nav-btn" data-pane="relatorios" data-roles="admin superadmin" data-title="Relatórios" data-sub="Faturamento, ticket médio e produtos campeões">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6" rx="1"/><rect x="12" y="7" width="3" height="11" rx="1"/><rect x="17" y="9" width="3" height="9" rx="1"/></svg>
+        Relatórios
+      </button>
+      <button class="demo-nav-btn" data-pane="auditoria" data-roles="admin superadmin" data-title="Auditoria" data-sub="Quem fez o quê, quando e com qual antes/depois">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l2.5 2.5"/><circle cx="12" cy="12" r="9"/></svg>
+        Auditoria
+      </button>
+      <button class="demo-nav-btn" data-pane="usuarios" data-roles="admin superadmin" data-title="Usuários e permissões" data-sub="Perfis de acesso (RBAC)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Usuários
+      </button>
+      <button class="demo-nav-btn" data-pane="vitrine" data-roles="cliente" data-title="Vitrine de produtos" data-sub="Monte seu pedido e envie para a loja">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.5"/><circle cx="18" cy="21" r="1.5"/><path d="M2 3h3l2.6 12.5a2 2 0 002 1.5h8.7a2 2 0 002-1.6L22 7H6"/></svg>
+        Fazer pedido
+      </button>
+
+      <div class="demo-side-foot">
+        <strong>Ambiente de demonstração</strong>
+        Seus dados ficam salvos neste navegador (localStorage). As regras de negócio funcionam de verdade.
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="demo-main">
+
+      <div class="demo-topbar">
+        <div>
+          <a href="index.html" class="demo-back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            Voltar ao site
+          </a>
+          <h1 id="demoTitle">Dashboard</h1>
+          <p id="demoSubtitle">Visão geral da loja em tempo real</p>
+        </div>
+        <div class="demo-top-actions">
+          <button class="btn btn-outline btn-sm" id="btnRestore" title="Apaga os dados locais e recarrega os dados de exemplo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 109-9"/><path d="M3 4v5h5"/></svg>
+            Restaurar demo
+          </button>
+          <button class="btn btn-outline btn-sm" id="btnLogout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>
+            Sair
+          </button>
+          <div class="demo-user">
+            <i id="userInitials">--</i>
+            <div><span id="userName">Usuário</span><small id="userRole">Perfil</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANE: Dashboard -->
+      <section class="pane" id="pane-dashboard">
+        <div class="demo-kpis">
+          <div class="demo-kpi" style="--kpi-tint:#e8effe">
+            <small>Produtos cadastrados</small>
+            <strong id="kpiProdutos">0</strong>
+            <span class="pos" id="kpiAtivos">0 ativos</span>
+          </div>
+          <div class="demo-kpi" style="--kpi-tint:#e0f5f2">
+            <small>Unidades em estoque</small>
+            <strong id="kpiEstoque">0</strong>
+            <span>em todas as categorias</span>
+          </div>
+          <div class="demo-kpi" style="--kpi-tint:#fef3c7">
+            <small>Vendas de hoje</small>
+            <strong id="kpiVendas">R$ 0,00</strong>
+            <span class="pos">atualizado a cada venda</span>
+          </div>
+          <div class="demo-kpi" style="--kpi-tint:#f3e8ff" data-roles="admin superadmin">
+            <small>Valor do estoque (custo)</small>
+            <strong id="kpiValorEstoque">R$ 0,00</strong>
+            <span>capital em mercadoria</span>
+          </div>
+        </div>
+
+        <div class="demo-grid-2">
+          <div class="demo-card">
+            <h3>Vendas da semana</h3>
+            <p class="card-sub">Faturamento diário consolidado</p>
+            <div class="chart-box"><canvas id="salesChart"></canvas></div>
+          </div>
+          <div class="demo-card">
+            <h3>Estoque por categoria</h3>
+            <p class="card-sub">Distribuição das unidades disponíveis</p>
+            <div class="chart-box"><canvas id="stockChart"></canvas></div>
+          </div>
+        </div>
+
+        <div class="demo-grid-2">
+          <div class="demo-card">
+            <div class="demo-card-head">
+              <div>
+                <h3>Últimas vendas</h3>
+                <p class="card-sub" style="margin-bottom:0">Registradas no caixa</p>
+              </div>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="demo-table">
+                <thead><tr><th>Venda</th><th>Cliente</th><th>Pagamento</th><th>Total</th><th>Status</th></tr></thead>
+                <tbody id="lastSales"></tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <div class="demo-card" style="margin-bottom:16px;">
+              <div class="demo-card-head">
+                <div>
+                  <h3>Alertas de reposição</h3>
+                  <p class="card-sub" style="margin-bottom:0">
+                    <span id="kpiBaixo">0</span> com estoque baixo ·
+                    <span id="kpiZerado">0</span> sem estoque
+                  </p>
+                </div>
+              </div>
+              <div id="lowStockList"></div>
+            </div>
+            <div class="demo-card">
+              <div class="demo-card-head">
+                <div>
+                  <h3>Validade próxima</h3>
+                  <p class="card-sub" style="margin-bottom:0">Lotes vencendo em até 30 dias</p>
+                </div>
+              </div>
+              <div id="expiryList"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANE: Vendas -->
+      <section class="pane" id="pane-vendas">
+        <form class="demo-form venda" id="formVenda" style="grid-template-columns:1.4fr 2fr 1fr 1.4fr 1.4fr auto;">
+          <div class="demo-field">
+            <label for="vendaBarcode">Código de barras</label>
+            <input type="text" id="vendaBarcode" placeholder="Leia ou digite + Enter">
+          </div>
+          <div class="demo-field">
+            <label for="vendaProduto">Produto</label>
+            <select id="vendaProduto" required></select>
+          </div>
+          <div class="demo-field">
+            <label for="vendaQtd">Qtd</label>
+            <input type="number" id="vendaQtd" min="1" placeholder="2" required>
+          </div>
+          <div class="demo-field">
+            <label for="vendaPagamento">Pagamento</label>
+            <select id="vendaPagamento">
+              <option>Dinheiro</option>
+              <option>Pix</option>
+              <option>Cartão de débito</option>
+              <option>Cartão de crédito</option>
+              <option>Transferência</option>
+            </select>
+          </div>
+          <div class="demo-field">
+            <label for="vendaCliente">Cliente (opcional)</label>
+            <input type="text" id="vendaCliente" placeholder="Consumidor final">
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            Vender
+          </button>
+        </form>
+
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <h3>Histórico de vendas</h3>
+              <p class="card-sub" style="margin-bottom:0">O cancelamento é restrito ao administrador e devolve o estoque automaticamente</p>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="demo-table">
+              <thead><tr><th>Venda</th><th>Hora</th><th>Cliente</th><th>Itens</th><th>Pagamento</th><th>Total</th><th>Operador</th><th>Status</th><th></th></tr></thead>
+              <tbody id="vendasBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANE: Pedidos -->
+      <section class="pane" id="pane-pedidos">
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <h3>Pedidos e orçamentos</h3>
+              <p class="card-sub" style="margin-bottom:0" id="pedidosHint">Pedidos abertos podem ser convertidos em venda (estoque é validado na conversão)</p>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="demo-table">
+              <thead><tr><th>Pedido</th><th>Data</th><th>Cliente</th><th>Itens</th><th>Total</th><th>Status</th><th></th></tr></thead>
+              <tbody id="pedidosBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANE: Produtos -->
+      <section class="pane" id="pane-produtos">
+        <div class="demo-toolbar">
+          <div class="demo-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="searchProduto" placeholder="Buscar por nome, SKU ou código de barras...">
+          </div>
+          <span style="font-size:.82rem;color:var(--muted);">Lotes e datas de validade visíveis na coluna "Validade"</span>
+        </div>
+        <div class="demo-card">
+          <div style="overflow-x:auto;">
+            <table class="demo-table">
+              <thead><tr><th>Produto</th><th>Categoria</th><th data-roles="admin superadmin">Custo</th><th>Venda</th><th>Estoque</th><th>Mínimo</th><th>Validade</th><th>Situação</th></tr></thead>
+              <tbody id="produtosBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANE: Estoque -->
+      <section class="pane" id="pane-estoque">
+        <form class="demo-form" id="formMov" data-roles="admin superadmin" style="grid-template-columns:2fr 1fr 1.6fr auto;">
+          <div class="demo-field">
+            <label for="movProduto">Produto</label>
+            <select id="movProduto" required></select>
+          </div>
+          <div class="demo-field">
+            <label for="movQtd">Quantidade</label>
+            <input type="number" id="movQtd" min="1" placeholder="10" required>
+          </div>
+          <div class="demo-field">
+            <label for="movMotivo">Motivo</label>
+            <select id="movMotivo">
+              <option>Compra</option>
+              <option>Devolução de cliente</option>
+              <option>Ajuste de inventário</option>
+              <option>Produto danificado</option>
+              <option>Perda</option>
+              <option>Devolução ao fornecedor</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            Registrar
+          </button>
+        </form>
+        <p class="lock-hint" id="movLockHint" style="display:none;margin-bottom:14px;">Ajuste manual de estoque restrito ao administrador — funcionários visualizam o histórico.</p>
+
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <h3>Histórico de movimentações</h3>
+              <p class="card-sub" style="margin-bottom:0">Nenhum registro é alterado ou apagado — histórico imutável com responsável</p>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="demo-table">
+              <thead><tr><th>Data</th><th>Produto</th><th>Tipo</th><th>Qtd</th><th>Motivo</th><th>Usuário</th></tr></thead>
+              <tbody id="movsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANE: Clientes -->
+      <section class="pane" id="pane-clientes">
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <h3>Clientes cadastrados</h3>
+              <p class="card-sub" style="margin-bottom:0">Clientes com conta no sistema aparecem com acesso à vitrine de pedidos</p>
+            </div>
+          </div>
+          <table class="demo-table">
+            <thead><tr><th>Nome</th><th>E-mail</th><th>Telefone</th><th>Perfil</th><th>Compras</th></tr></thead>
+            <tbody id="clientesBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PANE: Relatórios -->
+      <section class="pane" id="pane-relatorios">
+        <div class="demo-kpis">
+          <div class="demo-kpi" style="--kpi-tint:#e8effe">
+            <small>Vendas (mês)</small>
+            <strong id="relVendasCount">0</strong>
+            <span class="pos" id="relFaturamento">R$ 0,00</span>
+          </div>
+          <div class="demo-kpi" style="--kpi-tint:#e0f5f2">
+            <small>Ticket médio</small>
+            <strong id="relTicket">R$ 0,00</strong>
+            <span>por venda ativa</span>
+          </div>
+          <div class="demo-kpi" style="--kpi-tint:#fef3c7">
+            <small>Estoque baixo</small>
+            <strong id="relBaixo">0</strong>
+            <span class="neg">produtos para repor</span>
+          </div>
+          <div class="demo-kpi" style="--kpi-tint:#f3e8ff">
+            <small>Movimentações (hoje)</small>
+            <strong id="relMovs">0</strong>
+            <span>entradas e saídas</span>
+          </div>
+        </div>
+        <div class="demo-card">
+          <h3>Produtos mais vendidos</h3>
+          <p class="card-sub">Quantidade acumulada em vendas ativas</p>
+          <div class="chart-box"><canvas id="topChart"></canvas></div>
+        </div>
+      </section>
+
+      <!-- PANE: Auditoria -->
+      <section class="pane" id="pane-auditoria">
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <h3>Trilha de auditoria</h3>
+              <p class="card-sub" style="margin-bottom:0">Login, vendas, cancelamentos, ajustes e alterações de permissão</p>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="demo-table">
+              <thead><tr><th>Data</th><th>Usuário</th><th>Ação</th><th>Detalhe</th></tr></thead>
+              <tbody id="auditoriaBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANE: Usuários -->
+      <section class="pane" id="pane-usuarios">
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <h3>Usuários e permissões</h3>
+              <p class="card-sub" style="margin-bottom:0">RBAC — cada perfil acessa apenas o que pode fazer. Alterações são auditadas.</p>
+            </div>
+          </div>
+          <table class="demo-table">
+            <thead><tr><th>Nome</th><th>E-mail</th><th>Perfil</th><th>Ativo</th></tr></thead>
+            <tbody id="usuariosBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PANE: Vitrine (cliente) -->
+      <section class="pane" id="pane-vitrine">
+        <div class="vitrine-head">
+          <div>
+            <h3 style="font-size:1.05rem;">Olá, <span id="vitrineNome">cliente</span>! Monte seu pedido</h3>
+            <p style="font-size:.85rem;color:var(--muted);">Os pedidos chegam para a equipe da loja, que confirma estoque e separa tudo para você.</p>
+          </div>
+          <span class="badge info" id="vitrinePedidosCount">0 pedidos enviados</span>
+        </div>
+        <div class="vitrine-grid" id="vitrineGrid"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Modal: detalhe -->
+  <div class="demo-modal" id="demoModal">
+    <div class="demo-modal-card">
+      <h3 id="modalTitle">Detalhe</h3>
+      <p class="card-sub" id="modalSub"></p>
+      <div id="modalBody"></div>
+      <div class="demo-modal-foot" id="modalFoot"></div>
+      <button class="btn btn-outline btn-sm" id="modalClose" style="width:100%;margin-top:16px;">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Modal: recibo -->
+  <div class="demo-modal" id="receiptModal">
+    <div class="demo-modal-card">
+      <div class="receipt" id="receiptBody"></div>
+      <button class="btn btn-primary btn-sm" id="receiptClose" style="width:100%;margin-top:16px;">Concluir</button>
+    </div>
+  </div>
+
+  <div class="demo-toast" id="demoToast"></div>
+
+  <script src="assets/js/demo.js"></script>
+</body>
+</html>

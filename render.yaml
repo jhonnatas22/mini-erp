@@ -1,0 +1,31 @@
+services:
+  # --- Backend (API FastAPI) ---
+  - type: web
+    name: nexo-erp-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "480"
+      - key: CORS_ORIGINS
+        value: "*"
+      # DATABASE_URL: se não definida, usa SQLite local (não persiste em deploys
+      # gratuitos, pois o disco é apagado a cada build). Para persistir dados,
+      # crie um banco Postgres no Render (gratuito) e cole a "Internal Database
+      # URL" aqui.
+      # - key: DATABASE_URL
+      #   value: postgresql://usuario:senha@host/banco
+
+  # --- Frontend (site estático) ---
+  - type: web
+    name: nexo-erp-site
+    runtime: static
+    plan: free
+    buildCommand: "echo 'sem build necessário'"
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
